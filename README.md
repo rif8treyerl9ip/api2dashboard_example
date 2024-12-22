@@ -6,24 +6,18 @@
 
 Follow these steps to set up an environment that includes Airflow and DBT:
 
-### 1. Build the Docker Image
+Create directories:
 
 ```bash
-docker\build.bat
+docker/create_directries.sh
 ```
 
-### 2. Run the Docker Container
+### Build and Run
 
 ```bash
-docker\run.bat
-```
+docker/build.sh
 
-### 3. Restart Existing Container (If Applicable)
-
-If you have an existing container that you want to restart, use the following command:
-
-```bash
-docker\restart.bat
+docker/run.sh --rm
 ```
 
 ## Initial Setup When Creating the Container
@@ -31,8 +25,8 @@ docker\restart.bat
 Run the following command initially when creating the container to initialize Airflow:
 
 ```bash
- docker/airflow/init.sh
- docker/airflow/start.sh
+source docker/airflow/init.sh
+source docker/airflow/start.sh
 ```
 
 ## Stopping and Cleaning Up
@@ -42,27 +36,11 @@ To stop the Airflow processes and clean up the environment, follow these steps:
 - Kill any remaining Airflow processes:
 
 ```bash
-chmod +x docker/airflow/kill_airflow_processes.sh
 docker/airflow/kill.sh
 ```
 
 - Clean up Airflow logs:
 
 ```bash
-rm -rf /workspace/airflow/logs/*
+docker/airflow/clean_log.sh
 ```
-
--  Stop the Docker container:
-
-```bash
-docker\stop.bat
-```
-
--  Delete the Docker container:
-
-```bash
-docker\delete.bat
-```
-
-
-

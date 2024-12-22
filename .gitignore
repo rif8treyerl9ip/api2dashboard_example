@@ -4,29 +4,9 @@ __pycache__
 *.csv
 .env
 
-airflow-cosmos/airflow/dags/*.py
-airflow-cosmos/airflow/dags/*.sql
-airflow-cosmos/airflow/dags/dbt/*
-!airflow-cosmos/airflow/dags/dbt/.gitkeep
-!airflow-cosmos/airflow/dags/.gitkeep
-
-airflow-cosmos/airflow/data/*
-!airflow-cosmos/airflow/data/.gitkeep
-
-airflow-cosmos/airflow/logs/*
-!airflow-cosmos/airflow/logs/.gitkeep
-
-airflow-cosmos/docker/build.bat
-airflow-cosmos/docker/airflow/init.sh
-
-
 *airflow.cfg
 *airflow.db
 *airflow-webserver.pid
 *webserver_config.py
 
 warehouse/
-tmp/
-scripts/
-cm.bat
-formatter.bat
